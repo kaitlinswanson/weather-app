@@ -7,6 +7,11 @@ const currentTempDisplay = document.getElementById('tempDisplay');
 const highDisplay = document.getElementById('maxTempDisplay');
 const lowDisplay = document.getElementById('minTempDisplay');
 
+//converting Kelvin to F
+function convertTemp(temp) {
+ let newTemp = ((((temp - 273.15) * 1.8) + 32).toFixed(0));
+ return newTemp;
+}
 
 submitButton.addEventListener('click', () => {
   chooseCity();
@@ -24,8 +29,7 @@ async function getWeather() {
     const weatherData = await response.json();
 
     const currentTemp = weatherData.main.temp; 
-    console.log(currentTemp);
-    currentTempDisplay.innerText = 'Current Temp :' + (((currentTemp - 273.15) * 1.8) + 32);
+    currentTempDisplay.innerText = 'Current Temp :' + convertTemp(currentTemp);
     
     const cityName = weatherData.name;
     cityNameDisplay.innerHTML = 'City: ' + cityName;
@@ -34,10 +38,10 @@ async function getWeather() {
     descriptionDisplay.innerHTML = weatherDescription;
 
     const highTemp = weatherData.main.temp_max; 
-    highDisplay.innerHTML = 'High: ' + (((highTemp - 273.15) * 1.8) + 32);
+    highDisplay.innerHTML = 'High: ' + convertTemp(highTemp);
 
     const lowTemp = weatherData.main.temp_min; 
-    lowDisplay.innerHTML = 'Low: ' + (((lowTemp - 273.15) * 1.8) + 32);
+    lowDisplay.innerHTML = 'Low: ' + convertTemp(lowTemp);
 
     }
     getWeather();
