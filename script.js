@@ -6,7 +6,7 @@ const descriptionDisplay = document.getElementById('weatherDescription');
 const currentTempDisplay = document.getElementById('tempDisplay');
 const highDisplay = document.getElementById('maxTempDisplay');
 const lowDisplay = document.getElementById('minTempDisplay');
-
+const errorDisplay = document.getElementById('errorDisplay');
 //converting Kelvin to F
 function convertTemp(temp) {
  let newTemp = ((((temp - 273.15) * 1.8) + 32).toFixed(0));
@@ -14,20 +14,19 @@ function convertTemp(temp) {
 }
 
 submitButton.addEventListener('click', () => {
-  chooseCity();
+  getWeather();
 });
-
-function chooseCity() {
-    let city = locationInput.value; 
-   // console.log(city);
 
 //write the functions that hit the API
 // add in try to catch errors and display error message when invalid city is entered
 
 async function getWeather() { 
+    let city = locationInput.value;
+
+    try {
     const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=d6c8b5a48846624c112af61e9513bf90', {mode: 'cors'});
     const weatherData = await response.json();
-
+    
     const currentTemp = weatherData.main.temp; 
     currentTempDisplay.innerText = 'Current Temp :' + convertTemp(currentTemp);
     
@@ -42,19 +41,12 @@ async function getWeather() {
 
     const lowTemp = weatherData.main.temp_min; 
     lowDisplay.innerHTML = 'Low: ' + convertTemp(lowTemp);
-
+    } catch(err) {
+        console.log(err);
+        errorDisplay.innerHTML = 'City Not Found.';
     }
-    getWeather();
+    }
+
+
 //writhe the functions that PROCESS the JSON data and return an object with the data we need
 
-}
-
-
-//response.main.temp gives temp (in Kelvin)
-//response.name for name 
-//response.weather[0].descriptionfor "overcast" etc
-//response.main.temp_max
-//response.main.temp_min
-
-//set up a form that lets users put in their location and fetch weather (console.log)
-//maybe 'http...' + 'cityinput' + key...'
