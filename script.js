@@ -12,7 +12,7 @@ function convertTemp(temp) {
  let newTemp = ((((temp - 273.15) * 1.8) + 32).toFixed(0));
  return newTemp;
 }
-
+//add capitalization to the first letter of the string for weather description. 
 function capitalizeFirst(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -21,12 +21,10 @@ submitButton.addEventListener('click', () => {
   getWeather();
 });
 
-//write the functions that hit the API
-// add in try to catch errors and display error message when invalid city is entered
-
+// gather info from api. using async await
 async function getWeather() { 
     let city = locationInput.value;
-
+//try and catch for any city entry that is not valid.
     try {
     const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=d6c8b5a48846624c112af61e9513bf90', {mode: 'cors'});
     const weatherData = await response.json();
@@ -45,12 +43,10 @@ async function getWeather() {
 
     const lowTemp = weatherData.main.temp_min; 
     lowDisplay.innerHTML = 'Low: ' + convertTemp(lowTemp)  + '&deg;F';
+    //display an error message
     } catch(err) {
         console.log(err);
         errorDisplay.innerHTML = 'Sorry, City Not Found. Go Ahead, Try Again!';
     }
     }
-
-
-//writhe the functions that PROCESS the JSON data and return an object with the data we need
 
