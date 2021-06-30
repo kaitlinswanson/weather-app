@@ -13,6 +13,10 @@ function convertTemp(temp) {
  return newTemp;
 }
 
+function capitalizeFirst(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 submitButton.addEventListener('click', () => {
   getWeather();
 });
@@ -34,7 +38,7 @@ async function getWeather() {
     cityNameDisplay.innerHTML = 'City: ' + cityName;
 
     const weatherDescription = weatherData.weather[0].description;
-    descriptionDisplay.innerHTML = weatherDescription;
+    descriptionDisplay.innerHTML = capitalizeFirst(weatherDescription);
 
     const highTemp = weatherData.main.temp_max; 
     highDisplay.innerHTML = 'High: ' + convertTemp(highTemp) + '&deg;F';
