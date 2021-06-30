@@ -28,7 +28,7 @@ async function getWeather() {
     const weatherData = await response.json();
     
     const currentTemp = weatherData.main.temp; 
-    currentTempDisplay.innerText = 'Current Temp :' + convertTemp(currentTemp);
+    currentTempDisplay.innerHTML = 'Current Temp :' + convertTemp(currentTemp) + '&deg;F';
     
     const cityName = weatherData.name;
     cityNameDisplay.innerHTML = 'City: ' + cityName;
@@ -37,13 +37,13 @@ async function getWeather() {
     descriptionDisplay.innerHTML = weatherDescription;
 
     const highTemp = weatherData.main.temp_max; 
-    highDisplay.innerHTML = 'High: ' + convertTemp(highTemp);
+    highDisplay.innerHTML = 'High: ' + convertTemp(highTemp) + '&deg;F';
 
     const lowTemp = weatherData.main.temp_min; 
-    lowDisplay.innerHTML = 'Low: ' + convertTemp(lowTemp);
+    lowDisplay.innerHTML = 'Low: ' + convertTemp(lowTemp)  + '&deg;F';
     } catch(err) {
         console.log(err);
-        errorDisplay.innerHTML = 'City Not Found.';
+        errorDisplay.innerHTML = 'Sorry, City Not Found. Go Ahead, Try Again!';
     }
     }
 

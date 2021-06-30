@@ -5,13 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/96b8020baf.js" crossorigin="anonymous"></script>
     <title>Weather App</title>
 </head>
+<h1>
+    
+    <div id="title">
+        <i class="fas fa-cloud-sun-rain" id="cloudIcon"></i>
+        Weather</div>
+    <div id="small-title">The Little Weather App</div>
+</h1>
 <body>
-    <p>hi, welcome to my weather app!</p>
-    <label for="locationInput">City</label>
+    <div id="greeting">Greetings! Welcome to my little weather app!</div>
+    <div class="info">
+    <label for="locationInput">Type in your city:</label>
     <input id="locationInput" name="locationInput" type="text" required maxlength="85">
-    <button id="submitButton">Submit</button>
+    <i class="fas fa-search" id="submitButton"></i>
+    </div>
     <div id="weatherDisplay">
         <div id="errorDisplay"></div>
         <div id="cityName"></div>

@@ -1,0 +1,59 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+h1 {
+  background-color: rgb(67, 147, 223);
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  height: 8vh;
+}
+
+#title { 
+    color: white;
+    font-size: larger;
+}
+
+#small-title {
+    color: white; 
+    font-size: small;
+}
+
+#greeting { 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#weatherDisplay {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.info {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    align-content: center;
+    justify-content: center;
+    font-size: large;
+    height: 6vh;
+}
+
+#submitButton { 
+    border-radius: 2px;
+    min-height: 3vh;
+    min-width: 5vw;
+    pointer-events: all;
+    cursor: pointer;
+}
