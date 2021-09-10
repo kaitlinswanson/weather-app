@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/96b8020baf.js"
       crossorigin="anonymous"
@@ -12,22 +20,24 @@
     <title>Weather App</title>
   </head>
   <h1>
-    <div id="title">
-      <i class="fas fa-cloud-sun-rain" id="cloudIcon"></i>
-      Weather
+    <div class="titles">
+      <div id="title">
+        <i class="fas fa-cloud-sun-rain" id="cloudIcon"></i>
+        Weather
+      </div>
+      <div id="small-title">The Little Weather App</div>
     </div>
-    <div id="small-title">The Little Weather App</div>
   </h1>
   <body>
-    <div id="greeting">Greetings! Welcome to my little weather app!</div>
     <div class="info">
-      <label for="locationInput">Type in your city:</label>
       <input
+        class="search-box"
         id="locationInput"
         name="locationInput"
         type="text"
         required
         maxlength="85"
+        placeholder="type your city..."
       />
       <i class="fas fa-search" id="submitButton"></i>
     </div>

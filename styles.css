@@ -1,59 +1,77 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 h1 {
-  background-color: rgb(67, 147, 223);
+  display: flex;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 183, 255),
+    rgb(193, 236, 248)
+  );
   color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
   align-content: center;
   justify-content: center;
   text-align: center;
-  height: 8vh;
+  height: 12vh;
 }
 
-#title { 
-    color: white;
-    font-size: larger;
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+body {
+  background-color: white;
+}
+
+#title {
+  color: white;
+  font-size: larger;
 }
 
 #small-title {
-    color: white; 
-    font-size: small;
-}
-
-#greeting { 
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: large;
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
+  color: white;
+  font-size: small;
 }
 
 #weatherDisplay {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: larger;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
+  margin-top: 8vh;
+  color: rgb(121, 118, 118);
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  font-size: larger;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .info {
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    align-content: center;
-    justify-content: center;
-    font-size: large;
-    height: 6vh;
+  margin-top: 8vh;
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  align-content: center;
+  justify-content: center;
+  font-size: large;
 }
 
-#submitButton { 
-    border-radius: 2px;
-    min-height: 3vh;
-    min-width: 5vw;
-    pointer-events: all;
-    cursor: pointer;
+#submitButton {
+  color: darkgray;
+  min-height: 3vh;
+  min-width: 5vw;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.search-box {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  min-height: 5vh;
+  min-width: 20vw;
 }
